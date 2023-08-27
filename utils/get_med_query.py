@@ -6,17 +6,17 @@ from langchain.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from InstructorEmbedding import INSTRUCTOR
 import toml
+import streamlit as st
 
-secrets = toml.load(".streamlit\secrets.toml")["secrets"]
 def get_query(query,med_class):
     index_path = "VectorStore/"+med_class
     print(index_path)
     embeddings = HuggingFaceInstructEmbeddings()
     docsearch = FAISS.load_local(index_path,embeddings)
-    USER_ID = secrets["Llama_USER_ID"]
-    APP_ID = secrets["Llama_APP_ID"]
-    MODEL_ID = secrets["Llama_MODEL_ID"]
-    PAT = secrets["PAT"]
+    USER_ID = st.secrets["secrets"]["Llama_USER_ID"]
+    APP_ID = st.secrets["secrets"]["Llama_APP_ID"]
+    MODEL_ID = st.secrets["secrets"]["Llama_MODEL_ID"]
+    PAT = st.secrets["secrets"]["PAT"]
     clarifai_llm = Clarifai(
     pat=PAT, user_id=USER_ID, app_id=APP_ID, model_id=MODEL_ID
     )
