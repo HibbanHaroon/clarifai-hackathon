@@ -19,19 +19,18 @@ from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
 from clarifai_grpc.grpc.api.status import status_code_pb2
 import utils
 import toml
-import streamlit as st
 
 # secrets = toml.load(".streamlit\secrets.toml")["secrets"]
 
-PAT = st.secrets["PAT"]
-Llama_USER_ID = st.secrets["Llama_USER_ID"]
-Llama_APP_ID = st.secrets["Llama_APP_ID"]
-Llama_MODEL_ID = st.secrets["Llama_MODEL_ID"]
+PAT = "b50e6cd36a9a486283d9161c31a498f8"
+Llama_USER_ID = "meta"
+Llama_APP_ID = "Llama-2"
+Llama_MODEL_ID = "llama2-70b-chat"
 
-USER_ID = st.secrets["MC_USER_ID"]
-APP_ID = st.secrets["MC_APP_ID"]
-MODEL_ID = st.secrets["MC_MODEL_ID"]
-MODEL_VERSION_ID = st.secrets["MC_MODEL_VERSION_ID"]
+USER_ID = "engenair"
+APP_ID = "pharmogle"
+MODEL_ID = "pharmogle-dev-v1"
+MODEL_VERSION_ID = "b652f86cc8f346c3bce068a7459f8c91"
 
 
 prompt_template = """
