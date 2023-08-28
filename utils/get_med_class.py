@@ -4,11 +4,11 @@ from clarifai_grpc.grpc.api.status import status_code_pb2
 import toml
 import streamlit as st
 
-PAT = st.secrets["PAT"]
-USER_ID = st.secrets["MC_USER_ID"]
-APP_ID = st.secrets["MC_APP_ID"]
-MODEL_ID = st.secrets["MC_MODEL_ID"]
-MODEL_VERSION_ID = st.secrets["MC_MODEL_VERSION_ID"]
+PAT = st.secrets["secrets"]["PAT"]
+USER_ID = st.secrets["secrets"]["MC_USER_ID"]
+APP_ID = st.secrets["secrets"]["MC_APP_ID"]
+MODEL_ID = st.secrets["secrets"]["MC_MODEL_ID"]
+MODEL_VERSION_ID = st.secrets["secrets"]["MC_MODEL_VERSION_ID"]
 
 ############################################################################
 # YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE

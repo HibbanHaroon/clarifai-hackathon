@@ -13,10 +13,10 @@ def get_query(query,med_class):
     print(index_path)
     embeddings = HuggingFaceInstructEmbeddings()
     docsearch = FAISS.load_local(index_path,embeddings)
-    USER_ID = st.secrets["Llama_USER_ID"]
-    APP_ID = st.secrets["Llama_APP_ID"]
-    MODEL_ID = st.secrets["Llama_MODEL_ID"]
-    PAT = st.secrets["PAT"]
+    USER_ID = st.secrets["secrets"]["Llama_USER_ID"]
+    APP_ID = st.secrets["secrets"]["Llama_APP_ID"]
+    MODEL_ID = st.secrets["secrets"]["Llama_MODEL_ID"]
+    PAT = st.secrets["secrets"]["PAT"]
     clarifai_llm = Clarifai(
     pat=PAT, user_id=USER_ID, app_id=APP_ID, model_id=MODEL_ID
     )
